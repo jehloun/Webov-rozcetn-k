@@ -1,0 +1,173 @@
+
+@-ms-viewport { 
+  width: device-width; 
+}
+
+@-webkit-keyframes flipOut {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -110deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -110deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 3deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 3deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+
+@-webkit-keyframes flipIn {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 110deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 110deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -10deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 5deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -3deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -3deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+
+body {
+    overflow: hidden;
+    background-color: white;
+    margin:0;
+    padding:0;
+}
+
+.flipIn {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipIn;
+  animation-name: flipIn;
+}
+
+
+.flipOut {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOut;
+  animation-name: flipOut;
+}
+
+
+
+.mozajka {
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+}
+
+.mozajka .sloupec{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mozajka .sloupec div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mozajka .sloupec div div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.mozajka .sloupec:nth-of-type(2) {
+    top: 50%;
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    .mozajka .sloupec > div {
+        border: 3px solid rgb(249,196,19);
+        margin:0;
+}
+
+.mozajka .sloupec:nth-of-type(2) {
+    right: 0%;
+    top:0;
+}
+
+.mozajka .sloupec{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+
+}
+
+
+/*prv� sloupec*/
+
